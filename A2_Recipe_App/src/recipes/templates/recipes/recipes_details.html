@@ -1,18 +1,19 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+        <link rel="stylesheet" type="text/css" href="{% static 'recipes/css/style.css' %}">
         <title>Recipe Details</title>
     </head>
     <body>
       <h2>Details: {{object.name}}</h2>
-      <b>Recipe: </b> {{object.name}} <br>
-      <b>Cooking Time: </b> {{object.cooking_time}} <br>
-      <b>Difficulty: </b> {{object.difficulty}} <br>
-      <b>Ingredients: </b> {{object.ingredients}} <br>
-
-      <img src="{{object.pic.url}}" width="150" height="auto"/>
+        <div class="recipe-details"><b>Recipe: </b> {{object.name}} </div><br>
+        <div class="recipe-details"><b>Cooking Time: </b> {{object.cooking_time}} </div><br>
+        <div class="recipe-details"><b>Difficulty: </b> {{object.difficulty}} </div><br>
+        <div class="recipe-details"><b>Ingredients: </b> {{object.ingredients}} </div><br>
+      <img class="recipe-img" src="{{object.pic.url}}" width="150" height="auto"/>
     </body>
     </html>
