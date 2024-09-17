@@ -36,7 +36,7 @@ table{
 td{
     border-radius: 10%;
     border-color: black;
-    border-width: 5px;
+    border-width: 1px;
     justify-content: center;
 }
 tr{
@@ -47,6 +47,7 @@ tr{
 a{
     font-size: large;
     font-weight: 200;
+    color: black;
 }
 img{
     border-radius: 10%;
@@ -55,10 +56,27 @@ img{
 .recipe-details{
     display: flex;
     justify-content: center;
+    font-size: large;
 }
 .recipe-img{
     display: block;
     margin-left: auto;
     margin-right: auto;
     border-radius: 10%;
+    width: 300px;
+    height: auto;
+}
+.recipe-list-link{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    font-size: large;
+    color: black;
+}
+p{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    font-size: large;
+    color: black;
 }
