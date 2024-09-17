@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <title>Recipe Overview</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Recipe List </h1>
+            <table border="1" cellpadding="5" cellspacing="5">
+                <tr></tr>
+                <td>Recipe's Name</td> <td>Recipe's Image</td>
+                </tr>
+                {%for object in object_list %}
+                <tr>
+                    <td><a href="{{object.get_absolute_url}}">
+                        {{object.name}} 
+                    </a></td>
+                    <td><img src ="{{object.pic.url}}" width="150" height="175" /></td>                </li>
+                {%empty%}
+                <li>No recipes available.</li>
+                </tr>
+                {%endfor%}
+                </table>
+            </ul>
+            
+        </div>
+    </body>
+</html>

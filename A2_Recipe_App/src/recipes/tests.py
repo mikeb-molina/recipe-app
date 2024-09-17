@@ -1,5 +1,6 @@
 from django.test import TestCase
 from .models import Recipe
+from django.urls import reverse
 
 # Create your tests here.
 class RecipeModelTest(TestCase):
@@ -41,3 +42,8 @@ class RecipeModelTest(TestCase):
     def test_difficulty_calculation(self):
         recipe= Recipe.objects.get(id=1)
         self.assertEqual(recipe.difficulty(), 'Easy')
+
+    #Test for the get_absolute_url function
+    def test_get_absolute_url(self):
+        recipe = Recipe.objects.get(id=1)
+        self.assertEqual(recipe.get_absolute_url(), '/list/1')
