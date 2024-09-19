@@ -80,3 +80,8 @@ p{
     font-size: large;
     color: black;
 }
+
+.login-button{
+    display: flex;
+    justify-content: center;
+}
