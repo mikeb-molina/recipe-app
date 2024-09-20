@@ -42,9 +42,8 @@ def login_view(request):
     #Load login page using context information
     return render(request, 'auth/login.html', context)
 
-def logout_view(request):
-    logout(request)
-    return redirect(request, 'auth/successhtml')
+
 
 def logout_success(request):
-    return render(reques, 'success.html')
+    logout(request)
+    return render(request, 'auth/success.html')
