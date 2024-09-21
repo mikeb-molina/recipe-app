@@ -9,10 +9,51 @@
         <title>Recipe Overview</title>
     </head>
     <body>
+        <a href ="{%url 'logout_success' %}">  Logout  </a>
+        <a class="recipe-list-link" href="{% url 'recipes:recipes_home' %}">Back to Home</a>
+        <div class="search-box">
+            <p>Search for an ingredient or recipe name:</p>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form.recipe_name }}
+                {{ form.chart_type }}
+                <button type="submit">Search</button>
+                <a href="{% url 'recipes:recipes_list' %}"><button type=button>Show All Recipes</button></a>    
+            </form>
+            {% if form.is_bound %}
+            <p>You Searched for: {{form.recipe_name.value}}</p>
+            {% if not recipes.empty %}
+            <ul>
+                {% for index, recipe in recipes.iterrows %}
+                <li>
+                    <h2><a href="{% url 'recipes:detail' pk=recipe.id %}">{{recipe_name}}</a></h2>
+                    <img src="/media/{{ recipe.pic }}"/>
+                </li>
+                {% endfor %}
+            </ul>
+            <h1>Data Analytics</h1>
+            <img src="data:image/png;base64, {{chart|safe}}">
+            {% else %}
+                <h3>No data</h3>
+                {% endif %}
+        {% else %}
+            <ul>
+                {% for recipe in recipes %}
+                <li>
+                    <h2><a href="{% url 'recipes:detail' pk=recipe.id %}">{{recipe_name}}</a></h2>
+                    <img src="{{recipe.pic.url}}" />
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+
+
+
+        {% comment %}
         <div class="container">
             <h1>Recipe List </h1>
-            <a href ="{%url 'logout_success' %}">  Logout  </a>
-            <a class="recipe-list-link" href="{% url 'recipes:recipes_home' %}">Back to Home</a>
+            
             <table border="1" cellpadding="5" cellspacing="5">
                 <tr></tr>
                 <td>Recipe's Name</td> <td>Recipe's Image</td>
@@ -31,5 +72,6 @@
             </ul>
             
         </div>
+        {% endcomment %}
     </body>
 </html>
