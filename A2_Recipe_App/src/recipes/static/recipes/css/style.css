@@ -48,9 +48,12 @@ a{
     font-size: large;
     font-weight: 200;
     color: black;
+    margin-left: 100%;
 }
 img{
     border-radius: 10%;
+    width: 150px;
+    height: 100px;
 }
 
 .recipe-details{

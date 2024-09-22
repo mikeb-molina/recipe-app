@@ -4,8 +4,9 @@ from .models import Recipe
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import RecipeSearchForm
 from .utils import get_recipe_name_from_id, get_chart
-import pandas as pandas
+import pandas as pd 
 from django.urls import reverse
+from django.db.models import Q 
 
 
 
