@@ -1,6 +1,7 @@
 body, html{
     height: 100%;
-    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 body{
@@ -21,35 +22,7 @@ h2{
     display: flex;
     justify-content: center;
 }
-.header-image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10%;
-}
 
-table{
-    display: flex;
-    justify-content: center;
-}
-
-td{
-    border-radius: 10%;
-    border-color: black;
-    border-width: 1px;
-    justify-content: center;
-}
-tr{
-    border-radius: 10%;
-    border-color: black;
-}
-
-a{
-    font-size: large;
-    font-weight: 200;
-    color: black;
-    margin-left: 100%;
-}
 img{
     border-radius: 10%;
     width: 150px;
@@ -61,21 +34,8 @@ img{
     justify-content: center;
     font-size: large;
 }
-.recipe-img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10%;
-    width: 300px;
-    height: auto;
-}
-.recipe-list-link{
-    display: flex;
-    justify-content: center;
-    margin-top: 25px;
-    font-size: large;
-    color: black;
-}
+
+
 p{
     display: flex;
     justify-content: center;
@@ -84,7 +44,4 @@ p{
     color: black;
 }
 
-.login-button{
-    display: flex;
-    justify-content: center;
-}
+
