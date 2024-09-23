@@ -35,7 +35,7 @@
 
         .main-box form input {
             font-size: 18px;
-            background-color: #c7bfc5;
+            background-color: #a09c9f;
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -51,7 +51,7 @@
 
         .main-box select {
             font-size: 18px;
-            background-color: #c7bfc5;
+            background-color: #a09c9f;
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -99,20 +99,36 @@
         a.home-link{
             display: flex;
             justify-content: center;
-            margin-left: 50%;
+            margin-left: 0;
+            margin-top: 5px;
             
         }
         a.logout-button{
             display: flex;
-            justify-content: auto;
-            margin-left: 50%;
+            justify-content: center;
+            margin-top: 10px;
+            margin-left: 0;
             margin-right: auto;
+            font-size: large;
         }
+        p{
+            font-size: xx-large;
+        }
+        a.recipe-list-link{
+            margin-top: 10px;
+            font-size: large;
+            display: flex;
+            justify-content: center;
+            font-size: large;
+          }
         </style>
     </head>
     <body>
-        <a class="logout-button" href ="{%url 'logout_success' %}">  Logout  </a>
-        <a class="home-link" href="{% url 'recipes:recipes_home' %}">Back to Home</a>
+        <header>
+            <h1>
+                <p>Recipe List</p>
+            </h1>
+        </header>
         <main>
         <div class="main-box">
             <p>Search for an ingredient or recipe name:</p>
@@ -151,5 +167,7 @@
             {% endif %}
         </div>
         </main>
+        <a class="logout-button" href ="{%url 'logout_success' %}">  Logout  </a>
+        <a class="home-link" href="{% url 'recipes:recipes_home' %}">Back to Home</a>
     </body>
 </html>
