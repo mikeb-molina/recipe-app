@@ -2,6 +2,9 @@ from .models import Recipe
 from io import BytesIO
 import base64
 import matplotlib.pyplot as plt 
+import sys
+sys.setrecursionlimit(3500)
+
 
 
 def get_recipe_name_from_id(val):
@@ -53,7 +56,7 @@ def get_chart(chart_type, data, **kwargs):
     elif chart_type == '#2':
         # Pie chart for difficulty levels
         difficulty_counts = data['difficulty'].value_counts()
-        labels = difficulty_counts.index
+        labels = kwargs.get('labels')
         values = difficulty_counts.values
         plt.pie(values, labels=labels, autopct='%1.1f%%', colors=['#135E46', '#478966', '#73A788', '#53BD99'])
         plt.title('Recipes by Difficulty')
@@ -61,7 +64,7 @@ def get_chart(chart_type, data, **kwargs):
     elif chart_type == '#3':
         # Line chart Average cooking time by difficulty level
         plt.rcParams.update({'axes.facecolor': 'none'})
-        data['formatted_date'] = data['date_created'].apply(lambda x: x.strftime('%Y-%m-%d')) #format date_created
+        data['formatted_date'] = data['date_created'].apply(lambda x: x.strftime('%Y-%m-%d'))
         recipes_per_day = data.groupby(data['formatted_date']).size()
         plt.plot(recipes_per_day.index, recipes_per_day, color='#ef9b00')
         plt.xlabel('Date Created')

@@ -36,12 +36,12 @@ class RecipeListView(LoginRequiredMixin, ListView):
             if qs.exists():
                 recipes = pd.DataFrame(qs.values())
                 recipes['difficulty'] = recipes.apply(lambda row: get_recipe_name_from_id(row['id']).difficulty, axis=1)
-                chart= get_chart(chart_type, recipes, labels=recipes['id'].values)
+                chart= get_chart(chart_type, recipes, labels=recipes['name'].values)
             else:
                 recipes = pd.DataFrame()
 
         context = {
-            'fomr': form,
+            'form': form,
             'recipes': recipes,
             'chart': chart
         }

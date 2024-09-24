@@ -121,6 +121,10 @@
             justify-content: center;
             font-size: large;
           }
+          img.chart-img{
+            width: 600px;
+            height: auto;
+          }
         </style>
     </head>
     <body>
@@ -151,7 +155,7 @@
                 {% endfor %}
             </ul>
             <h1>Data Analytics</h1>
-            <img src="data:image/png;base64, {{chart|safe}}">
+            <img class="chart-img" src="data:image/png;base64, {{chart|safe}}">
             {% else %}
                 <h3>No data</h3>
                 {% endif %}
