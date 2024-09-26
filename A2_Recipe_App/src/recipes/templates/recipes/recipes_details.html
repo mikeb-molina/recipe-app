@@ -6,47 +6,27 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" type="text/css" href="{% static 'recipes/css/style.css' %}">
-        <style>
-          h2{
-            position: relative;
-            font-size: large;
-            display: flex;
-            justify-content: center;
-          }
-          img.recipe-img{
-            
-            width: 300px;
-            height: auto;
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-            margin-left: auto;
-            margin-right: auto;
-          }
-          a.recipe-list-link{
-            margin-top: 10px;
-            font-size: large;
-            display: flex;
-            justify-content: center;
-          }
-          a.logout-button{
-            margin-top: 10px;
-            font-size: large;
-            display: flex;
-            justify-content: center;
-        }
-        </style>
         <title>Recipe Details</title>
     </head>
     <body>
-      <h2>Details: {{object.name}}</h2>
-        <div class="recipe-details"><b>Recipe: </b> {{object.name}} </div><br>
-        <div class="recipe-details"><b>Cooking Time: </b> {{object.cooking_time}} </div><br>
-        <div class="recipe-details"><b>Difficulty: </b> {{object.difficulty}} </div><br>
-        <div class="recipe-details"><b>Ingredients: </b> {{object.ingredients}} </div><br>
-        <img class="recipe-img" src="{{object.pic.url}}"/>
-        <a class="recipe-list-link" href="{% url 'recipes:recipes_list' %}">Back to Recipe List</a>
-        <a class="recipe-list-link" href="{% url 'recipes:recipes_home' %}">Back to Home</a>
-        <a class="logout-button" href ="{%url 'logout_success' %}">  Logout  </a>
-      </body>
-    </html>
+      <header>
+        <h1>Details: {{object.name}}</h1>
+      </header>
+      <main>
+        <div class="main-box">
+          <div class="recipe-details"><b>Recipe: </b> {{object.name}} </div><br>
+          <div class="recipe-details"><b>Cooking Time: </b> {{object.cooking_time}} </div><br>
+          <div class="recipe-details"><b>Difficulty: </b> {{object.difficulty}} </div><br>
+          <div class="recipe-details"><b>Ingredients: </b> {{object.ingredients}} </div><br>
+          <img class="recipe-img" src="{{object.pic.url}}"/>
+        </div>  
+      </main>
+        <br>
+        <br>
+          <a class="recipe-list-link" href="{% url 'recipes:recipes_list' %}">Back to Recipe List</a>
+          <a class="recipe-list-link" href="{% url 'recipes:recipes_home' %}">Back to Home</a>
+          <a class="logout-button" href ="{%url 'logout_success' %}">  Logout  </a>
+        
+      
+    </body>
+</html>

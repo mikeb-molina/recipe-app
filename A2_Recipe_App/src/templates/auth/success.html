@@ -1,12 +1,19 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'recipes/css/style.css' %}">
         <title>
             Logout Successful
         </title>
     </head>
     <body>
-        <h1>You've sucessfully logged out!</h1>
-        <p><a class="login-button" href="{% url 'login' %}"> Login </a></p>
+        <main>
+            <div class="main-box">
+                <h1>You've sucessfully logged out!</h1>
+                <p><a class="login-button" href="{% url 'login' %}"> Login </a></p>
+                <a class="home-link" href="{% url 'recipes:recipes_home' %}">Back to Home</a>
+            </div>
+        </main>
     </body>
 </html>
